@@ -1,0 +1,80 @@
+{
+    "typeDocuments": [
+      { "key": "" },
+      { "key": "dni" },
+      { "key": "nie" },
+      { "key": "passport" }
+    ],
+    "genres": [
+      { "key": "" },
+      { "key": "male" },
+      { "key": "female" },
+      { "key": "other" }
+    ],
+    "civilStatus": [
+      { "key": "" },
+      { "key": "single" },
+      { "key": "married" },
+      { "key": "divorced" },
+      { "key": "widowed" }
+    ],
+    "countries": [
+      { "key": "" },
+      { "key": "ES" },
+      { "key": "FR" },
+      { "key": "IT" }
+    ],
+    "provinces": {
+      "ES": [
+        { "key": "" },
+        { "key": "GI" },
+        { "key": "B" },
+        { "key": "M" }
+      ],
+      "FR": [
+        { "key": "" },
+        { "key": "75" },
+        { "key": "69" }
+      ],
+      "IT": [
+        { "key": "" },
+        { "key": "RM" },
+        { "key": "MI" }
+      ]
+    },
+    "regions": {
+      "ES": [
+        { "key": "" },
+        { "key": "CAT" },
+        { "key": "MAD" },
+        { "key": "AND" }
+      ],
+      "FR": [
+        { "key": "" },
+        { "key": "IDF" },
+        { "key": "PAC" }
+      ],
+      "IT": [
+        { "key": "" },
+        { "key": "LAZ" },
+        { "key": "LOM" }
+      ]
+    },
+    "provinciasFiltradas": [],
+    "regionesFiltradas": [],
+    "nationalities": [
+      { "key": "" },
+      { "key": "ES" },
+      { "key": "FR" },
+      { "key": "IT" }
+    ],
+    "placesBirth": [
+      { "key": "" },
+      { "key": "GI" },
+      { "key": "B" },
+      { "key": "MAD" },
+      { "key": "PAR" },
+      { "key": "ROM" }
+    ]
+}
+  

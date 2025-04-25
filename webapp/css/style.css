@@ -1,0 +1,6 @@
+/* Enter your custom styles here */
+.tableHeaderWhite {
+    background-color: white !important;
+    box-shadow: inset 0px -1px 0px #ebebeb;
+    padding: 0.75rem 1rem;
+}

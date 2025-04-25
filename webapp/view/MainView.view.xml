@@ -1,0 +1,365 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  controllerName="retosapui5.retosapui5.controller.MainView">
+    <Shell id="shell">
+        <App id="appInv" height="100%">
+            <Page id="page" title="{i18n>title}" 
+                            class="sapUiNoContentPadding sapUiResponsivePadding"
+                            enableScrolling="false"
+                             showFooter="true">
+                <content>
+                 <ScrollContainer width="100%" height="100%" horizontal="false" vertical="true">
+                 <content>
+                 <VBox class="sapUiContentPadding" fitContainer="true">
+                    <VBox id="formContainerInput" class="sapUiSmallMargin">
+                        <!-- Personal Information -->
+                        <layout:SimpleForm 
+                          id="formUsuario"
+                          editable="true"
+                          layout="ColumnLayout"
+                          columnsM="2"
+                          columnsL="2"
+                          columnsXL="2">
+                          <layout:content>
+                            <core:Title text="{i18n>sectionPersonal}"/>
+
+                              <Label text="ID" />
+                              <Input  id="inputID"
+                                      required="true"
+                                      change=".onFieldChange"
+                                      fieldGroupIds="formFields"
+                                      value="{
+                                        path: 'user>/personal/id',
+                                        type: 'sap.ui.model.type.String',
+                                        constraints: {
+                                          minLength: 1,
+                                          maxLength: 10
+                                        }
+                                      }"
+                                      maxLength="10"
+                                      type="Text" />
+
+                              <Label text="{i18n>typeDocumentLabel}" />
+                              <Select id ="selTypeDocument"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  selectedKey="{user>/personal/typeDocument}"
+                                  items="{dominios>/typeDocuments}"
+                                  required="true">
+                                  <core:Item key="{dominios>key}"
+                                             text="{
+                                                      parts: [
+                                                        { path: 'dominios>key' },
+                                                        { value: 'typeDocument' }
+                                                      ],
+                                                      formatter: '.translateDomain'
+                                                    }" />
+                              </Select>
+
+                              <Label text="{i18n>documentNumberLabel}" />
+                              <Input  id="inputNumberDocument"
+                                      required="true"
+                                      change=".onFieldChange"
+                                      fieldGroupIds="formFields"
+                                      value="{
+                                        path: 'user>/personal/numberDocument',
+                                        type: 'sap.ui.model.type.String',
+                                        constraints: {
+                                          maxLength: 20
+                                        }
+                                      }"
+                                      maxLength="20"
+                                    />
+
+                              <Label text="{i18n>firstNameLabel}" />
+                              <Input id="inputFirstName"
+                                     required="true"
+                                     change=".onFieldChange"
+                                     fieldGroupIds="formFields"
+                                     value="{
+                                          path: 'user>/personal/firstName',
+                                          type: 'sap.ui.model.type.String',
+                                          constraints: {
+                                            minLength: 2,
+                                            maxLength: 30
+                                          }
+                                        }"
+                              />
+
+                              <Label text="{i18n>lastNameLabel}" />
+                              <Input id="inputLastName"
+                                     required="true"
+                                     change=".onFieldChange"
+                                     fieldGroupIds="formFields"
+                                     value="{
+                                          path: 'user>/personal/lastName',
+                                          type: 'sap.ui.model.type.String',
+                                          constraints: {
+                                            minLength: 2,
+                                            maxLength: 30
+                                          }
+                                        }"
+                              />
+
+                              <Label text="{i18n>birthDateLabel}" />       
+                              <DatePicker  id="inputBirthDate"
+                                    required="true"
+                                    fieldGroupIds="formFields"
+                                    change=".onFieldChange"
+                                    value="{
+                                      path: 'user>/personal/birthDate',
+                                      type: 'sap.ui.model.type.Date',
+                                      formatOptions: {
+                                        strictParsing: true
+                                      }
+                                    }"
+                              />           
+                          <!-- Other Information -->    
+                          <core:Title text="{i18n>sectionOther}"/>
+
+                              <Label text="{i18n>placeBirthLabel}" />
+                              <Select
+                                  selectedKey="{user>/other/placeBirth}"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  items="{dominios>/placesBirth}"
+                                  required="true">
+                                  <core:Item key="{dominios>key}" 
+                                             text="{
+                                                      parts: [
+                                                        { path: 'dominios>key' },
+                                                        { value: 'placeBirth' }
+                                                      ],
+                                                      formatter: '.translateDomain'
+                                                    }" />
+                              </Select>
+
+                              <Label text="{i18n>nationalityLabel}" />
+                              <Select
+                                  selectedKey="{user>/other/nationality}"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  items="{dominios>/nationalities}"
+                                  required="true">
+                                  <core:Item key="{dominios>key}"  
+                                            text="{
+                                                      parts: [
+                                                        { path: 'dominios>key' },
+                                                        { value: 'nationality' }
+                                                      ],
+                                                      formatter: '.translateDomain'
+                                                    }" />
+                              </Select>
+
+                              <Label text="{i18n>genderLabel}" />
+                              <Select
+                                  selectedKey="{user>/other/genre}"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  items="{dominios>/genres}"
+                                  required="true">
+                                  <core:Item key="{dominios>key}" 
+                                            text="{parts: [
+                                                            { path: 'dominios>key' },
+                                                            { value: 'genre' }
+                                                          ],
+                                                  formatter: '.translateDomain'}" />
+                              </Select>
+
+                              <Label text="{i18n>civilStatusLabel}" />
+                              <Select
+                                  selectedKey="{user>/other/civilStatus}"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  items="{dominios>/civilStatus}"
+                                  required="true">
+                                  <core:Item key="{dominios>key}" 
+                                             text="{parts: [
+                                                      { path: 'dominios>key' },
+                                                      { value: 'civilStatus' }
+                                                    ],
+                                                    formatter: '.translateDomain'
+                                                    }" />
+                              </Select>
+                            <!-- Address Information -->
+                            <core:Title text="{i18n>sectionAddress}"/>
+
+                                <Label text="{i18n>countryLabel}" />
+                                <Select  
+                                    selectedKey="{user>/address/country}"
+                                    change=".onCountryChangedAndValidate"
+                                    fieldGroupIds="formFields"
+                                    items="{dominios>/countries}"
+                                    required="true">
+                                    <core:Item key="{dominios>key}"  
+                                               text="{parts: [
+                                                      { path: 'dominios>key' },
+                                                      { value: 'country' }
+                                                    ],
+                                                    formatter: '.translateDomain'
+                                                    }" /> 
+                                </Select>
+
+                                <Label text="{i18n>provinceLabel}" />
+                                <Select
+                                    selectedKey="{user>/address/province}"
+                                    change=".onFieldChange"
+                                    fieldGroupIds="formFields"
+                                    items="{dominios>/provinciasFiltradas}"
+                                    required="true">
+                                    <core:Item key="{dominios>key}"   
+                                               text="{
+                                                  parts: [
+                                                    { path: 'dominios>key' },
+                                                    { value: 'province' }
+                                                  ],
+                                                  formatter: '.translateDomain'
+                                                }" />
+                                </Select>
+
+
+                                <Label text="{i18n>regionLabel}" />
+                                <Select
+                                    selectedKey="{user>/address/region}"
+                                    change=".onFieldChange"
+                                    fieldGroupIds="formFields"
+                                    items="{dominios>/regionesFiltradas}"
+                                    required="true">
+                                    <core:Item key="{dominios>key}" 
+                                              text="{
+                                                      parts: [
+                                                        { path: 'dominios>key' },
+                                                        { value: 'region' }
+                                                      ],
+                                                      formatter: '.translateDomain'
+                                                    }" />
+                                </Select>
+
+                                <Label text="{i18n>addressLabel}" />
+                                <Input required="true"  
+                                       maxLength="100" 
+                                       change=".onFieldChange"
+                                       fieldGroupIds="formFields"
+                                       value="{user>/address/address}" />
+
+                                <Label text="{i18n>postalCodeLabel}" />
+                                <Input id="inputPostalCode"
+                                       required="true"
+                                       change=".onFieldChange"
+                                       fieldGroupIds="formFields"
+                                       value="{
+                                            path: 'user>/address/postalCode',
+                                            type: 'sap.ui.model.type.String'
+                                        }"
+                                        maxLength="10" />
+
+                          <!-- Contact Information -->
+                          <core:Title text="{i18n>sectionContact}"/>
+                          
+                              <Label text="{i18n>phoneLabel}" />
+                             
+                              <Input
+                                  id="inputPhoneNumber"
+                                  required="true"
+                                  change=".onFieldChange"
+                                  fieldGroupIds="formFields"
+                                  value="{user>/contact/phoneNumber}"
+                                />
+
+                                <Label text="{i18n>emailLabel}" />
+                                
+                                <Input
+                                    id="inputEmail"
+                                    required="true"
+                                    change=".onFieldChange"
+                                    fieldGroupIds="formFields"
+                                    value="{user>/contact/email}"
+                                  />
+                                
+                        </layout:content>
+                        </layout:SimpleForm>
+
+                      </VBox>
+
+                      <VBox id="resultsContainer" class="sapUiSmallMarginTop sapUiSmallMargin" >
+                     
+                      <Table 
+                        id="tableUsuarios"
+                        items="{usuarios>/}"
+                        class="sapUiSmallMarginTop"
+                        mode="SingleSelectMaster"
+                        itemPress="onItemPress"
+                        >
+
+                        <headerToolbar>
+                          <Toolbar class="tableHeaderWhite">                  
+                           <Title id="tableTitle"
+                              text="{= ${usuarios>/}.length > 0 ? ${i18n>usersTitle} + ' (' + ${usuarios>/}.length + ')' : ${i18n>usersTitle} }"
+                            />
+                           </Toolbar >
+                        </headerToolbar>
+
+
+                        <columns>
+                          <Column>
+                            <Text text="{i18n>documentNumberLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>fullNameLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>birthDateLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>placeBirthLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>nationalityLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>genderLabel}" />
+                          </Column>
+                          <Column demandPopin="true" minScreenWidth="Tablet">
+                            <Text text="{i18n>civilStatusLabel}" />
+                          </Column>
+                        </columns>
+
+                        <items>
+                          <ColumnListItem type="Navigation">
+                            <cells>
+                             <Text text="{usuarios>personal/numberDocument}" />
+                              <Text text="{usuarios>personal/fullName}" />
+                              <Text text="{path: 'usuarios>personal/birthDate', formatter: '.formatBirthDate'}" />
+                              <Text text="{path: 'usuarios>other/placeBirth', formatter: '.translatePlaceBirth'}" />
+                              <Text text="{path: 'usuarios>other/nationality', formatter: '.translateNationality'}" />
+                              <Text text="{path: 'usuarios>other/genre', formatter: '.translateGenre'}" />
+                              <Text text="{path: 'usuarios>other/civilStatus', formatter: '.translateCivilStatus'}" />
+                            </cells>
+                          </ColumnListItem>
+                        </items>
+                      </Table>
+                   </VBox>  
+                  </VBox>      
+                 </content>
+                </ScrollContainer>
+                </content>
+                <footer>
+                        <OverflowToolbar class="sapUiTinyMarginTop">
+                          <Button id="messagePopoverButton"
+                                  visible="{= !!${message>/}.length }" 
+                                  icon="{ path: 'message>/', formatter: '.mpIconFormatter' }"
+                                  type="{ path: 'message>/', formatter: '.mpTypeFormatter' }"
+                                  text="{ path: 'message>/', formatter: '.mpSeverityMessages' }"
+                                  press=".onMessagePopoverPress" />
+                          <ToolbarSpacer />
+                          <Button id="save" text="{i18n>saveButtonLabel}" type="Accept" press=".onGuardarUsuario" />
+                          <Button id="clear" text="{i18n>clearButtonLabel}" type="Reject" class="sapUiSmallMarginBegin"  press=".onCancelar" />
+                        </OverflowToolbar>
+                 </footer>
+            </Page>
+        </App>
+    </Shell>
+</mvc:View>

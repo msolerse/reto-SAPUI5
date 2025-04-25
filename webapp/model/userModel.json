@@ -1,0 +1,28 @@
+{
+    "personal": {
+      "id": "",  
+      "typeDocument": "",
+      "numberDocument": "",
+      "firstName": "",
+      "lastName": "",
+      "fullName":"",
+      "birthDate": null
+    },
+    "other": {  
+      "placeBirth": "",
+      "nationality": "",
+      "genre": "",
+      "civilStatus": ""
+    },
+    "address": {
+      "country": "",
+      "province": "", 
+      "region": "",
+      "address": "",
+      "postalCode": ""
+    },
+    "contact": {
+      "phone": "",
+      "email": ""
+    }
+  }
