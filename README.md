@@ -4,7 +4,7 @@ This project is a submission for the SAPUI5 Beginners Challenge. It is a full SA
 
 ---
 
-## 🧩 Features
+## Features
 
 ✅ Responsive user form with:
 - Input validation (required fields, pattern checks)
@@ -35,7 +35,7 @@ This project is a submission for the SAPUI5 Beginners Challenge. It is a full SA
 
 ---
 
-## 🖥️ Technologies
+##  Technologies
 
 - SAPUI5 / OpenUI5
 - XML Views + JS Controller
@@ -46,26 +46,34 @@ This project is a submission for the SAPUI5 Beginners Challenge. It is a full SA
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
-### 🌍 Multilingual support + locale-aware date format
-![EN View](vista_idioma_ingles.png)
-
-### 🖊️ Form with validations and MessagePopover
-![Form validation](validaciones_formulario.png)
-
-### 🧾 Full user list + detail dialog
-![User list + Detail](detalle_usuario_tabla.png)
-
-### ✅ Correct record creation
-![Valid user saved](vista_principal_desktop.png)
-
-### 📱 Responsive mobile view
-![Mobile](vista_principal_móvil.png)
+###  Vista principal con datos guardados
+![Vista principal desktop](./screenshots/vista_principal_desktop.png)
 
 ---
 
-## 🚀 How to Run
+###  Validación del formulario con MessagePopover
+![Formulario con errores](./screenshots/validaciones_formulario.png)
+
+---
+
+###  Multilenguaje (ejemplo en inglés)
+![Vista idioma inglés](./screenshots/vista_idioma_ingles.png)
+
+---
+
+###  Vista de detalle del usuario
+![Vista detalle modal](./screenshots/detalle_usuario_tabla.png)
+
+---
+
+###  Versión responsive en móvil
+![Vista móvil](./screenshots/vista_principal_móvil.png)
+
+---
+
+##  How to Run
 
 1. Clone the repository
 2. Run on local Fiori tools or SAP Business Application Studio
@@ -73,7 +81,7 @@ This project is a submission for the SAPUI5 Beginners Challenge. It is a full SA
 
 ---
 
-## 📝 Notes
+##  Notes
 
 - Fully local solution using JSON models – no backend.
 - Clean code with reusable formatters and domain translators.
